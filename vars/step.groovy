@@ -7,7 +7,7 @@ def buildDocker () {
 }
 
 def npmBuild () {
-  myapp = docker.build("jaganthoutam/nodejs-test:${env.BUILD_ID}")
+  myapp = docker.build("mvllrmnmjc/nodejs-test:${env.BUILD_ID}")
 }
 
 def pushDocker () {
