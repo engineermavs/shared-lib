@@ -3,21 +3,22 @@ def call() {
         agent any
         environment {
             AWS_CRED = 'cloud_user'
+            AWS_REGION = 'us-east-1'
         }
         stages {
-            stage('Upload Template to S3') {                  
+            stage('Upload Files to S3') {                  
                 steps {
-                    uploadS3()
+                    uploadS3(s3Bucket: "testbucket-mrm", path: "*.yml, random.txt")
                 }
             }
-            stage('Upload Files to S3') {
-                steps {
-                    uploadFilesS3()
-                }
-            }
+//             stage('Delete text to S3') {                  
+//                 steps {
+//                     deletetxt(s3Bucket: "testbucket-geraldine", path: "delete.txt")
+//                 }
+//             }
             stage('Deploy EC2') {                  
                 steps {
-                    cfnDeployEC2()
+                    cfnDeployEC2(stack: "EC2Jenkins-mrm", url: "https://testbucket-mrm.s3.amazonaws.com/deployEC2.yml")
                 }
             }
         }
