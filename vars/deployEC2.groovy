@@ -8,7 +8,7 @@ def call() {
         stages {
             stage('Upload Files to S3') {                  
                 steps {
-                    uploadS3(s3Bucket: "testbucket-mrm", path: "*.yml, random.txt")
+                    uploadFiles(s3Bucket: "testbucket-mrm", path: "*.yml, random.txt")
                 }
             }
 //             stage('Delete text to S3') {                  
