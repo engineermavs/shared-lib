@@ -1,4 +1,4 @@
-def call(Map stageParams = [awsRegion: "us-east-1"]){
+def call(Map stageParams = [:]){
   withAWS(region: stageParams.awsRegion, credentials:"${AWS_CRED}") {
         awsIdentity()
         cfnCreateChangeSet(
