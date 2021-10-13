@@ -6,9 +6,14 @@ def call() {
             AWS_REGION = 'us-east-1'
         }
         stages {
-            stage('Upload Files to S3') {                  
+            stage('Upload Template to S3') {                  
                 steps {
-                    uploadFiles(s3Bucket: "testbucket-mrm", path: "*.yml, random.txt")
+                    uploadFiles(s3Bucket: "testbucket-mrm", path: "*.yml")
+                }
+            }
+            stage('Upload All Files to S3') {                  
+                steps {
+                    uploadFiles(s3Bucket: "testbucket-mrm", path: "**/*")
                 }
             }
 //             stage('Delete text to S3') {                  
