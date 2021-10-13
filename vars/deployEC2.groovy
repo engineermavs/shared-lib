@@ -4,11 +4,12 @@ def call() {
         environment {
             AWS_CRED = 'cloud_user'
             AWS_REGION = 'us-east-1'
+            bucketName = 'testbucket-mavs'
         }
         stages {
             stage('Upload Template to S3') {                  
                 steps {
-                    uploadFiles(s3Bucket: "testbucket-mavs", path: "*.yml")
+                    uploadFiles(s3Bucket: "${bucketName}", path: "*.yml")
                 }
             }
             stage('Upload All Files to S3') {                  
