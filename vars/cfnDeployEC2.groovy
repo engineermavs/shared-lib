@@ -10,9 +10,6 @@ def call(Map stageParams = [:]){
           stack:"${stageParams.stack}", 
           changeSet:'my-change-set'
         )
-        cfnUpdate(
-          stack:"${stageParams.stack}"
-        )
   }
 }
 //awsRegion: "us-east-1" , 'EC2Jenkins-mrm', 'https://testbucket-mrm.s3.amazonaws.com/deployEC2.yml'
