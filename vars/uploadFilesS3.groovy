@@ -1,4 +1,4 @@
-def call(Map stageParams = [awsRegion: "us-east-1", s3Bucket: "testbucket-mrm"]) {
+def call(Map stageParams = [:]) {
     withAWS(region: stageParams.awsRegion, credentials:"${AWS_CRED}") {
         awsIdentity()
         s3Upload( 
@@ -7,3 +7,5 @@ def call(Map stageParams = [awsRegion: "us-east-1", s3Bucket: "testbucket-mrm"])
         )
     }
 }
+
+// awsRegion: "us-east-1", s3Bucket: "testbucket-mrm"
