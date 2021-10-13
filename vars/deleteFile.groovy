@@ -1,4 +1,4 @@
-def call(Map stageParams = [awsRegion: "us-east-1", s3Bucket: "testbucket-mavs"]) {
+def call(Map stageParams = [awsRegion: "us-east-1", s3Bucket: "testbucket-mrm"]) {
     withAWS(region: stageParams.awsRegion, credentials:"${AWS_CRED}") {
         awsIdentity()
         s3Delete( 
