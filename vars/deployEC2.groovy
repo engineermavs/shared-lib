@@ -12,11 +12,11 @@ def call() {
                     uploadFiles(s3Bucket: "${bucketName}", path: "*.yml")
                 }
             }
-            stage('Upload All Files to S3') {                  
-                steps {
-                    uploadFiles(s3Bucket: "${bucketName}", path: "**/*")
-                }
-            }
+//             stage('Upload All Files to S3') {                  
+//                 steps {
+//                     uploadFiles(s3Bucket: "${bucketName}", path: "**/*")
+//                 }
+//             }
 //             stage('Delete text to S3') {                  
 //                 steps {
 //                     deleteFile(s3Bucket: "testbucket-mavs", path: "deletesample.txt")
