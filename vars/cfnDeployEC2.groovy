@@ -12,4 +12,4 @@ def call(Map stageParams = [:]){
         )
   }
 }
-//awsRegion: "us-east-1" , 'EC2Jenkins-mrm', 'https://testbucket-mrm.s3.amazonaws.com/deployEC2.yml'
+//awsRegion: "us-east-1" , 'EC2Jenkins-mavs', 'https://testbucket-mavs.s3.amazonaws.com/deployEC2.yml'
