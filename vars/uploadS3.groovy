@@ -7,3 +7,4 @@ def call(Map stageParams = [:]) {
         )
     }
 }
+// awsRegion: "us-east-1", s3Bucket: "testbucket-mrm"
