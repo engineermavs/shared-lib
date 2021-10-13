@@ -1,9 +1,8 @@
-def call(Map stageParams = []) {
-    withAWS(region: stageParams.awsRegion, credentials:"${AWS_CRED}") {
-        awsIdentity()
+def call(Map stageParams = [:]) {
+    withAWS(region: "${AWS_REGION}", credentials:"${AWS_CRED}") {
         s3Delete( 
-            includePathPattern: "*.txt",
-            bucket: stageParams.s3Bucket
+            bucket: "${stageParams.s3Bucket}",
+            path: "${stageParams.path}"
         )
     }
 }
