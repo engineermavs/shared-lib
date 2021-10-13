@@ -18,7 +18,7 @@ def call() {
             }
 //             stage('Delete text to S3') {                  
 //                 steps {
-//                     deletetxt(s3Bucket: "testbucket-geraldine", path: "delete.txt")
+//                     deleteFile(s3Bucket: "testbucket-mrm", path: "deletesample.txt")
 //                 }
 //             }
             stage('Deploy EC2') {                  
