@@ -1,5 +1,5 @@
-def call(Map stageParams = [:]) {
-    withAWS(region: "${AWS_REGION}", credentials:"${AWS_CRED}") {
+def call(Map stageParams = [Region: "us-east-1",  bucketName: "testbucket-mavs", s3Path: ""]) {
+    withAWS(region: stageParams.Region, credentials:'awscredentials') {
         awsIdentity()
         s3Upload( 
             workingDir: stageParams.workingDir,
