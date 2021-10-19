@@ -2,8 +2,10 @@ def call(Map stageParams = [:]) {
     withAWS(region: "${AWS_REGION}", credentials:"${AWS_CRED}") {
         awsIdentity()
         s3Upload( 
-            includePathPattern: "${stageParams.path}",
-            bucket: "${bucketName}"
+            workingDir: stageParams.workingDir,
+            includePathPattern: stageParams.stackFileName,
+            bucket: stageParams.bucketName,
+            path: stageParams.s3Path
         )
     }
 }
